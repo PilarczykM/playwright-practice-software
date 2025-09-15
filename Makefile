@@ -16,13 +16,13 @@ test: ## Run Playwright tests
 # ==============================================================================
 
 format: ## Format code with Biome
-	npx @biomejs/biome format --write
+	npx @biomejs/biome format . --write
 
 lint: ## Lint code with Biome
-	npx @biomejs/biome lint --write
+	npx @biomejs/biome lint . --write
 
 check: ## Run all Biome checks
-	npx @biomejs/biome check --write
+	npx @biomejs/biome check . --write
 
 # ==============================================================================
 # Housekeeping
