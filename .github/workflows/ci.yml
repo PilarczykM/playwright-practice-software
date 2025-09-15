@@ -1,7 +1,5 @@
 name: CI
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
 jobs:
@@ -9,5 +7,5 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-      - uses: .github/actions/setup
-      - uses: .github/actions/ci
+      - uses: /.github/actions/setup
+      - uses: /.github/actions/ci

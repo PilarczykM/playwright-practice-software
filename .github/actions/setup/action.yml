@@ -3,11 +3,7 @@ description: "Checkout, setup node, and install dependencies"
 runs:
   using: "composite"
   steps:
-    - name: Checkout with ref
-      uses: actions/checkout@v5
-      with:
-        persist-credentials: false
-    - name: Checkout without ref
+    - name: Checkout
       uses: actions/checkout@v5
       with:
         persist-credentials: false
