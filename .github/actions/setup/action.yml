@@ -1,20 +1,13 @@
-name: 'Setup'
-description: 'Checkout, setup node, and install dependencies'
-inputs:
-  ref:
-    description: 'The branch, tag or SHA to checkout.'
-    required: false
+name: "Setup"
+description: "Checkout, setup node, and install dependencies"
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
     - name: Checkout with ref
-      if: ${{ inputs.ref != '' }}
       uses: actions/checkout@v5
       with:
         persist-credentials: false
-        ref: ${{ inputs.ref }}
     - name: Checkout without ref
-      if: ${{ inputs.ref == '' }}
       uses: actions/checkout@v5
       with:
         persist-credentials: false
