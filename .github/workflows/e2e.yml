@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - uses: ./.github/actions/setup
+      - uses: .github/actions/setup
         with:
           ref: ${{ github.event.workflow_run.head_sha }}
-      - uses: ./.github/actions/test
+      - uses: .github/actions/test
