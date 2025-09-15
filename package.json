@@ -1,0 +1,27 @@
+{
+	"name": "playwright-practice-software",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/PilarczykM/playwright-practice-software.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "commonjs",
+	"bugs": {
+		"url": "https://github.com/PilarczykM/playwright-practice-software/issues"
+	},
+	"homepage": "https://github.com/PilarczykM/playwright-practice-software#readme",
+	"devDependencies": {
+		"@biomejs/biome": "2.2.4",
+		"@playwright/test": "^1.55.0",
+		"@types/node": "^24.4.0"
+	},
+	"dependencies": {
+		"dotenv": "^17.2.2"
+	}
+}
