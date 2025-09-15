@@ -3,9 +3,8 @@ on:
   pull_request:
     branches: [main]
 jobs:
-  test:
-    timeout-minutes: 60
+  ci:
     runs-on: ubuntu-latest
     steps:
-      - uses: /.github/actions/setup
-      - uses: /.github/actions/ci
+      - uses: ./github/actions/setup
+      - uses: ./github/actions/ci
