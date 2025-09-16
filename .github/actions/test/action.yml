@@ -1,5 +1,14 @@
 name: "Test"
 description: "Install Playwright browsers and run tests"
+
+inputs:
+  api_url:
+    description: "API URL"
+    required: true
+  ui_url:
+    description: "UI URL"
+    required: true
+
 runs:
   using: "composite"
   steps:
