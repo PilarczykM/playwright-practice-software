@@ -2,6 +2,9 @@ name: "Test"
 description: "Install Playwright browsers and run tests"
 runs:
   using: "composite"
+  env:
+    API_URL: ${{ secrets.API_URL }}
+    UI_URL: ${{ secrets.UI_URL }}
   steps:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
