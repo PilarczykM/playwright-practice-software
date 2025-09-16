@@ -17,3 +17,6 @@ jobs:
       - uses: actions/checkout@v5
       - uses: ./.github/actions/setup
       - uses: ./.github/actions/test
+        with:
+          api_url: ${{ secrets.API_URL }}
+          ui_url: ${{ secrets.UI_URL }}

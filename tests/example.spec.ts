@@ -1,20 +1,18 @@
 import { expect, test } from "@playwright/test";
+import { HomePage } from "../lib/pages/Home";
 
-test("has title", async ({ page }) => {
-	await page.goto("https://playwright.dev/");
+let homePage: HomePage;
 
-	// Expect a title "to contain" a substring.
-	await expect(page).toHaveTitle(/Playwright/);
-});
+test.describe("Home page spec", () => {
+	test.beforeEach(async ({ page }) => {
+		homePage = new HomePage(page);
+	});
 
-test("get started link", async ({ page }) => {
-	await page.goto("https://playwright.dev/");
+	test("check page title", async ({ page }) => {
+		await homePage.goto();
 
-	// Click the get started link.
-	await page.getByRole("link", { name: "Get started" }).click();
-
-	// Expects page to have a heading with the name of Installation.
-	await expect(
-		page.getByRole("heading", { name: "Installation" }),
-	).toBeVisible();
+		await expect(page).toHaveTitle(
+			"Practice Software Testing - Toolshop - v5.0",
+		);
+	});
 });
