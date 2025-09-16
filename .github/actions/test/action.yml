@@ -15,6 +15,14 @@ runs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
       shell: bash
+    - name: Echo envs (debug)
+      run: |
+        echo "API_URL=$API_URL"
+        echo "UI_URL=$UI_URL"
+      shell: bash
+      env:
+        API_URL: ${{ inputs.api_url }}
+        UI_URL: ${{ inputs.ui_url }}
     - name: Run Playwright tests
       run: npx playwright test
       shell: bash
