@@ -9,6 +9,9 @@ runs:
     - name: Run Playwright tests
       run: npx playwright test
       shell: bash
+      env:
+        API_URL: ${{ inputs.api_url }}
+        UI_URL: ${{ inputs.ui_url }}
     - name: Upload report
       uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
