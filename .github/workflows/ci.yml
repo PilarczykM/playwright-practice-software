@@ -12,14 +12,11 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    env:
-      API_URL: ${{ inputs.api_url }}
-      UI_URL: ${{ inputs.ui_url }}
     needs: lint # 👈 only runs if lint succeeded
     steps:
       - uses: actions/checkout@v5
       - uses: ./.github/actions/setup
       - uses: ./.github/actions/test
         with:
-          api_url: ${{ env.API_URL }}
-          ui_url: ${{ env.UI_URL }}
+          api_url: ${{ secrets.API_URL }}
+          ui_url: ${{ secrets.UI_URL }}
