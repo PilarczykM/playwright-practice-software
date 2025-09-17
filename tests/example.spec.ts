@@ -12,7 +12,7 @@ test.describe("Home page spec", () => {
 	});
 });
 
-// This is only example fow to monitor site.
+// This is only example how to monitor site.
 test.skip("Homepage network monitoring", async ({
 	networkErrorMonitoring: page,
 }) => {
