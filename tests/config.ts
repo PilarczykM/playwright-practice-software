@@ -1,3 +1,3 @@
 export type AuthOptions = {
-  authPath: string;
+	authPath: string;
 };
