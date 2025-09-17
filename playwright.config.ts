@@ -34,8 +34,14 @@ export default defineConfig<AuthOptions>({
 	/* Configure projects for major browsers */
 	projects: [
 		{
-			name: "chromium",
+			name: "practicesoftwaretesting",
 			use: { ...devices["Desktop Chrome"] },
+			testIgnore: ["**/demo/**"],
+		},
+		{
+			name: "demo",
+			use: { ...devices["Desktop Chrome"], baseURL: "http://localhost:3000" },
+			testMatch: ["**/demo/**/*.spec.ts"],
 		},
 
 		// {
@@ -70,9 +76,9 @@ export default defineConfig<AuthOptions>({
 	],
 
 	/* Run your local dev server before starting the tests */
-	// webServer: {
-	//   command: 'npm run start',
-	//   url: 'http://localhost:3000',
-	//   reuseExistingServer: !process.env.CI,
-	// },
+	webServer: {
+		command: "npm run demo",
+		url: "http://localhost:3000",
+		reuseExistingServer: !process.env.CI,
+	},
 });
