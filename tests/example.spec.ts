@@ -16,10 +16,10 @@ test.describe("Home page spec", () => {
 	});
 });
 
-test.fail(
-	"Homepage network monitoring",
-	async ({ networkErrorMonitoring: page }) => {
-		homePage = new HomePage(page);
-		await homePage.goto();
-	},
-);
+// This is only example fow to monitor site.
+test.skip("Homepage network monitoring", async ({
+	networkErrorMonitoring: page,
+}) => {
+	homePage = new HomePage(page);
+	await homePage.goto();
+});
