@@ -1,13 +1,14 @@
 import path from "node:path";
 import { defineConfig, devices } from "@playwright/test";
 import dotenv from "dotenv";
+import type { AuthOptions } from "./tests/config";
 
 dotenv.config({ path: path.resolve(__dirname, ".env") });
 
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
-export default defineConfig({
+export default defineConfig<AuthOptions>({
 	testDir: "./tests",
 	/* Run tests in files in parallel */
 	fullyParallel: true,
@@ -26,6 +27,8 @@ export default defineConfig({
 
 		/* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
 		trace: "on-first-retry",
+
+		authPath: "playwright/.auth.json",
 	},
 
 	/* Configure projects for major browsers */
